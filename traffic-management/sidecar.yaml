@@ -1,0 +1,10 @@
+# This configuration makes the sidecars from 'revision-ns' namespace
+# only be able to request services known by Istio
+apiVersion: networking.istio.io/v1beta1
+kind: Sidecar
+metadata:
+  name: default
+  namespace: revision-ns
+spec:
+  outboundTrafficPolicy:
+    mode: REGISTRY_ONLY

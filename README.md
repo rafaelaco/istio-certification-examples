@@ -14,6 +14,15 @@ References:
  - [Installation Guide](https://istio.io/v1.13/docs/setup/install/istioctl/)
  - [IstioOperator API](https://istio.io/v1.13/docs/reference/config/istio.operator.v1alpha1/)
 
+## Traffic Management
+Examples of how to:
+ - Understand and control sidecar injection and configuration using Sidecar resource
+ - Use Gateway resource to configure ingress and egress gateways
+ - Understand how to use ServiceEntry resource for adding entries to internal service registry
+ - Understand traffic routing and how to configure routing between difference service versions
+ - Define traffic policies using DestinationRule
+ - Configure traffic mirroring capabilities
+
 ## How to use this project
 You need a kubernetes cluster running and configured in your context.
 
