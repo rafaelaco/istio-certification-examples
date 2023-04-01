@@ -8,6 +8,6 @@ echo "Installing IstioOperator using overlays in a custom file"
 cd istio-$ISTIO_VERSION/bin
 ./istioctl install -f ../../install-upgrade-configure/overlay-file.yaml
 
-echo "Enabling Istio in the 'basic' namespace"
-kubectl create namespace basic
-kubectl label namespace basic istio-injection=enabled
+echo "Enabling Istio in the 'overlay' namespace"
+kubectl create namespace overlay
+kubectl label namespace overlay istio-injection=enabled

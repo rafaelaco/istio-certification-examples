@@ -6,6 +6,7 @@ Examples of how to:
  - Use IstioOperator to install a basic cluster
  - Use IstioOperator to customize and configure Istio components installation
  - Use overlays to customize Istio component settings
+ - Use canary upgrade of Istio components
 
 It's important to note that when you use `istioctl` you are installing using the "IstioOperator" CR, because of that you can use any supported parameters from the "IstioOperator API".
 

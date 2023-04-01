@@ -11,6 +11,6 @@ cd istio-${ISTIO_VERSION}/bin
 echo "Installing Istio Control Plane using custom revision"
 ./istioctl install --set profile=empty --set components.pilot.enabled=true --set revision=1-13-1
 
-echo "Enabling Istio in the 'basic' namespace"
-kubectl create namespace basic
-kubectl label namespace basic istio-injection=enabled
+echo "Enabling Istio in the 'custom' namespace"
+kubectl create namespace custom
+kubectl label namespace custom istio-injection=enabled
