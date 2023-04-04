@@ -1,0 +1,57 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: vs-helloworld
+spec:
+  gateways:
+    - my-gateway
+  hosts:
+    - my-host.private
+  http:
+    - name: "hello"
+      match:
+        - uri:
+            prefix: "/helloworld"
+      rewrite:
+        uri: "/"
+      route:
+        - destination:
+            host: helloworld.default.svc.cluster.local
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: helloworld
+  name: helloworld
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: helloworld
+      version: v1
+  template:
+    metadata:
+      labels:
+        app: helloworld
+        version: v1
+    spec:
+      containers:
+      - image: kennethreitz/httpbin
+        name: httpbin
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: helloworld
+  name: helloworld
+spec:
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: helloworld
+    version: v1
+---
