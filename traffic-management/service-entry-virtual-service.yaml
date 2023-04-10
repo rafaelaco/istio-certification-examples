@@ -1,0 +1,33 @@
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: DestinationRule
+metadata:
+  name: dr-mytest
+spec:
+  host: httpbin.org
+  trafficPolicy:
+    loadBalancer:
+      simple: ROUND_ROBIN
+    portLevelSettings:
+    - port:
+        number: 80
+      tls:
+        mode: DISABLE
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: vs-mytest
+spec:
+  hosts:
+    - httpbin.org
+  gateways:
+    - mesh
+  http:
+    - match:
+        - gateways: [mesh]
+      route:
+        - destination:
+            host: httpbin.default.svc.cluster.local
+            port:
+              number: 80
