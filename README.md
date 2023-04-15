@@ -23,6 +23,12 @@ Examples of how to:
  - Define traffic policies using DestinationRule
  - Configure traffic mirroring capabilities
 
+## Resiliency and Fault Injection
+Examples of how to:
+ - Understand and configure outlier detection
+ - Use resiliency features
+ - Configure failure injection
+
 ## How to use this project
 You need a kubernetes cluster running and configured in your context.
 
