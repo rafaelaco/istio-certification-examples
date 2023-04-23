@@ -31,7 +31,6 @@ Examples of how to:
 
 ## Securing Workloads
 Examples of how to:
- - Understand security features of Istio
  - Set up Istio authorization for HTTP/TCP traffic in the mesh
  - Configure mutual TLS on mesh, namespace, and workload level
 
