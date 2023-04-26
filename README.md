@@ -34,6 +34,10 @@ Examples of how to:
  - Set up Istio authorization for HTTP/TCP traffic in the mesh
  - Configure mutual TLS on mesh, namespace, and workload level
 
+## Advanced Scenarios
+Examples of how to:
+ - Onboard non-Kubernetes workloads to the mesh
+ - Customize Envoy configuration using Envoy Filters
 
 ## How to use this project
 You need a kubernetes cluster running and configured in your context.
